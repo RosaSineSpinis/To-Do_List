@@ -1,0 +1,36 @@
+
+<h2> Hypertube </h2>
+<!--this should be generated automatically-->
+<p><a target="_blank" href="/signup/">sign up</a></p>
+<p><a target="_blank" href="/login/">log in</a></p>
+<!--var here-->
+
+<br>
+<br>
+
+<form action="{% url 'home_home' %}" method="GET">
+
+    <input type='text' name='q' placeholder = 'fgf'>
+    <input type='submit' value='Save'>
+
+</form>
+
+{% for instance in tag_set %}
+<!--<p><a href="{{ instance.get_absolute_url }}">{{ instance.title }}</a></p>-->
+<!--<form action="{% url 'home_home' %}" method="GET" name='tag'>-->
+    <p>
+        <a name='tag' href="{% url 'home_home' %}?tag={{ instance.name }}">#{{ instance.name }}
+        </a>
+    </p>
+<!--</form>-->
+
+{% endfor %}
+
+
+{% include "video_list.html" with videos_number=videos_number object_list=object_list only %}
+
+<!--{% block content %}-->
+<!--This text will be replaced - list of videos-->
+<!--{% endblock %}-->
+
+<a target="_blank" href="/tube/upload/">upload video</a>

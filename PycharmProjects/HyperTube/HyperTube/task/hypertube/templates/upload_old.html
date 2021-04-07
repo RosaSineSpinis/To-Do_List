@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p><a href="/tube/">Hypertube</a></p>
+
+{% if user.is_authenticated %}
+    Hello, {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+
+    <form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+        <table>{{ v_form.as_table }}</table>
+        <table>{{ t_form.as_table }}</table>
+        <table>{{ vt_form.as_table }}</table>
+        <button type="submit">Upload</button>
+    </form>
+
+<!--  <p><a href="{% url 'home_home' %}">Return to home</a></p>-->
+<!--  <p><a href="/../tube/">Return to home</a></p>-->
+
+<!--  <p><a href="/tube/">logout</a></p>-->
+{% else %}
+
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+    <a href="/signup/">Sign Up</a>
+{% endif %}
+
+
+
+</body>
+</html>

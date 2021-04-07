@@ -1,0 +1,25 @@
+<h2 style="text-align: center;">Description</h2>
+
+<p>There is only one step left: last but not least! Make it possible to stream videos uploaded to your hosting.</p>
+
+<h2 style="text-align: center;">Objectives</h2>
+
+<p>Create a new page for watching video streams. This page should contain the following:</p>
+
+<ol>
+	<li>A link to the main page <em>target="_blank" href="/tube/";</em></li>
+	<li>A link to the login page <em>target="_blank" href="/login/"</em>;</li>
+	<li>A <em>p</em> tag with the title of the video;</li>
+	<li>Links to the tube page with a filter for every tag, for example, <code class="java">&lt;a target="_blank" href="/tube/?tag=sport"&gt;#sport&lt;/a&gt;</code>;</li>
+	<li>A <code class="java">video</code> tag and a <code class="java">source</code> tag inside of it with a link to the file response and type, for example:</li>
+</ol>
+
+<pre><code class="java">&lt;video width="640" height="480" controls&gt;
+  &lt;source src="/tube/football.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+
+<p>If you start the application on your computer with the command <code class="java">python manage.py runserver</code>, the video from the example should be available at the address <em>localhost:8000/tube/football.mp4. </em>Its handler should use <code class="java">HttpResponse</code> with the <code class="java">content_type</code> of the video file and <code class="java">Accept-Ranges</code> in headers with the <code class="java">bytes</code> value.</p>
+
+<h2 style="text-align: center;">Example</h2>
+
+<p><img alt="" src="https://ucarecdn.com/7eb1d1da-7883-4953-9315-302f313e5bc9/"></p>
