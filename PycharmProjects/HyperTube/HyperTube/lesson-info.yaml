@@ -1,9 +1,0 @@
-type: framework
-content:
-- Creating models
-- Main page
-- Tag filters and search
-- Authentication
-- Loading video files
-- Video page
-current_task: 5
